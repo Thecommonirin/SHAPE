@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shape"
+version = "1.0.0"
+description = "SHAPE: Self-supervised Hallucination Alignment with Preference Enhancement - 自监督幻觉对齐与偏好增强框架"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "SHAPE Team"}
+]
+keywords = [
+    "vision-language-model",
+    "preference-optimization",
+    "dpo",
+    "hallucination-mitigation",
+    "multimodal-learning",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0.1",
+    "torchvision>=0.15.2",
+    "transformers>=4.31.0",
+    "tokenizers>=0.12.1,<0.14",
+    "sentencepiece>=0.1.99",
+    "accelerate>=0.22.0",
+    "peft>=0.4.0",
+    "bitsandbytes>=0.41.0",
+    "flash-attn>=1.0.4",
+    "deepspeed>=0.9.5",
+    "datasets",
+    "pydantic>=1.0,<2",
+    "numpy>=1.26.1",
+    "scikit-learn>=1.2.2",
+    "Pillow",
+    "requests",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+training = [
+    "wandb",
+    "tensorboard",
+    "ninja",
+]
+serving = [
+    "gradio>=3.35.2",
+    "fastapi",
+    "uvicorn",
+]
+all = [
+    "shape[dev,training,serving]",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/SHAPE"
+Repository = "https://github.com/yourusername/SHAPE"
+Documentation = "https://github.com/yourusername/SHAPE/blob/main/README.md"
+
+[tool.setuptools]
+packages = ["shape", "configs", "src"]
+
+[tool.setuptools.package-data]
+shape = ["py.typed"]
+configs = ["*.json", "deepspeed/*.json"]
+
+[tool.black]
+line-length = 120
+target-version = ['py39', 'py310', 'py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
