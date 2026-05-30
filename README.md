@@ -1,11 +1,5 @@
 # SHAPE: Self-Improved Holistic Alignment for Preference Enhancement
 
-<div align="center">
-
-<img src="assets/logo.png" alt="SHAPE Logo" width="200"/>
-
-**自监督幻觉对齐与偏好增强框架**
-
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
