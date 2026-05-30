@@ -225,7 +225,14 @@ This project is built upon the following excellent works:
 如果您使用本项目，请引用：
 
 ```bibtex
-@waiting
+@article{chen2026self,
+  title={Self-Improved Holistic Alignment for Preference Enhancement},
+  author={Chen, Kejia and Zhang, Jiawen and Yang, Jiazhen and Song, Mingli and Feng, Zunlei},
+  journal={Pattern Recognition},
+  pages={113238},
+  year={2026},
+  publisher={Elsevier}
+}
 ```
 
 ---
